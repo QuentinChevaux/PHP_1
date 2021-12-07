@@ -102,9 +102,57 @@
             <br />
             <br />
 
+        
+
         <input type="submit" value="Valider" />
 
     </form>
+
+        <br />
+        <br />
+
+    <form action="traitement.php" method="POST">
+
+        <label for="number">Saisir un nombre entre 1 et 3 : </label>
+        <input type="number" id="number" name="number" />
+
+        <input type="submit" value="Valider" />
+
+    </form>
+
+    <?php
+
+        if (isset($_GET["retour"])) {
+
+            if ($_GET["retour"] == "Non") {
+
+                $message = "Le nombre n'est pas entre 1 et 3";
+
+            }
+
+            else if ($_GET["retour"] == "Rien") {
+
+                $message = "Saisir une Valeur";
+
+            }
+
+            else {
+
+                $message = "Compris entre 1 et 3";
+
+            }
+
+        }
+
+        else {
+
+            $message = "";
+
+        }
+        
+        echo "<h2>$message</h2>";
+        
+    ?>
 
 </body>
 

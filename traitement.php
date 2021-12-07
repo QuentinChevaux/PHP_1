@@ -102,8 +102,33 @@
 
     }
 
+    if ( isset($_POST["number"]) && !empty ($_POST["number"])) {
+
+        if ($_POST["number"] >= 1 && $_POST["number"] <= 3) {
+
+            $retour = "Oui";
+
+        }
+
+        else {
+    
+            $retour = "Non";
+    
+        }
+
+    }
+
+    else {
+
+        $retour = "Rien";
+
+    }
+
+    header("location: index.php?retour=".$retour);
+
 ?>    
 
+<br />
 <br />
 
 <a href="index.php">Retour</a>

@@ -89,7 +89,19 @@
 
             <br />
             <br />
+
+        <select name="type_voie">
+
+            <option value="Allée">Allée</option>
+            <option value="Avenue">Avenue</option>
+            <option value="Boulevard">Boulevard</option>
+            <option value="Cité">Cité</option>
+    
+        </select>
         
+            <br />
+            <br />
+
         <input type="submit" value="Valider" />
 
     </form>

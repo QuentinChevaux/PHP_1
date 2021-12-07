@@ -64,7 +64,6 @@
 
     echo "Les films Cochés : <ul>";
 
-
         if ( isset($_POST["action"])) { 
                 
             if ($_POST["action"] == "on" ) {
@@ -96,6 +95,12 @@
         }
 
     echo "</ul>";
+
+    if ( isset($_POST["type_voie"]) && !empty($_POST["type_voie"])) {
+
+        echo "Vous avez Selectionné : " . $_POST["type_voie"];
+
+    }
 
 ?>    
 

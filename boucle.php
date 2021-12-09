@@ -82,11 +82,15 @@
 
             echo "<h2>Calcul Table de Multiplication d'un chiffre entré : </h2><br />";
 
-            for ( $res_iteration = 1; $res_iteration <= 10; $res_iteration++) {
+            if ( !empty($_POST["number"])) {
 
-                $resultat_table = $_POST["number"] * $res_iteration;
-
-                echo "<h2> " . $_POST["number"] . " x " . $res_iteration . " = " . $resultat_table . " </h2><br />";
+                for ( $res_iteration = 1; $res_iteration <= 10; $res_iteration++) {
+    
+                    $resultat_table = $_POST["number"] * $res_iteration;
+    
+                    echo "<h2> " . $_POST["number"] . " x " . $res_iteration . " = " . $resultat_table . " </h2><br />";
+    
+                }
 
             }
 

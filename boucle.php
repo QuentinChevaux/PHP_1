@@ -40,7 +40,7 @@
 
         <?php
 
-        echo "<div class = 'flex'>";
+        echo "<div class = 'flex_center'>";
 
         if (isset($_POST["number"])) {
 
@@ -96,6 +96,10 @@
 
             echo "</div>";
 
+            echo "<div class='flex_around'>";
+
+            echo "<div class='ligne_2_col_1'>";
+
             echo "<h2>Calcul somme Entier jusque nombre entré : </h2><br />";
 
             if ( !empty($_POST["number"])) {
@@ -111,6 +115,10 @@
                 echo "<h2> $resultat_table </h2><br />";
 
             }
+
+            echo "</div>";
+
+            echo "<div class='ligne_2_col_2'>";
 
             echo "<h2>Calcul Factoriel : </h2><br />";
 
@@ -128,6 +136,9 @@
 
             }
 
+            echo "</div>";
+
+            echo "</div>";
 
 
 

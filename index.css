@@ -8,10 +8,17 @@
     src: url(./font/Lean.otf);
 }
 
-.flex {
+.flex_center {
 
     display: flex;
     justify-content: center;
+
+}
+
+.flex_around {
+
+    display: flex;
+    justify-content: space-around;
 
 }
 

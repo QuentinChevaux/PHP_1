@@ -42,9 +42,17 @@
 
         <?php
 
+        echo "<div class = 'flex'>";
+
         if (isset($_POST["number"])) {
 
             $j = $_POST["number"] + 1;
+
+            $resultat_table = "";
+
+            $res_iteration = 1;
+
+            echo "<div class = 'col_1'>";
 
             echo "<h2>Incrementation avec Boucle While : <br /></h2>";
         
@@ -56,7 +64,11 @@
         
             }
 
-            echo "<br /><h2>Incrementation avec Boucle For : <br /></h2>";
+            echo "</div>";
+
+            echo "<div class = 'col_2'>";
+
+            echo "<h2>Incrementation avec Boucle For : <br /></h2>";
 
             for ( $j = $_POST["number"] + 1; $j <= $_POST["number"] + 10; $j++) {
 
@@ -64,7 +76,25 @@
 
             }
 
+            echo "</div>";
+
+            echo "<div class = 'col_3'>";            
+
+            echo "<h2>Calcul Table de Multiplication d'un chiffre entré : </h2><br />";
+
+            for ( $res_iteration = 1; $res_iteration <= 10; $res_iteration++) {
+
+                $resultat_table = $_POST["number"] * $res_iteration;
+
+                echo "<h2> " . $_POST["number"] . " x " . $res_iteration . " = " . $resultat_table . " </h2><br />";
+
+            }
+
+            echo "</div>";
+
         }
+
+        echo "</div>";
 
         ?>
     

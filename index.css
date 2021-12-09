@@ -56,14 +56,8 @@ h2 {
 
     width: 50%;
     margin: auto;
-    /* text-align: center; */
+    text-align: center;
     
     font-size: 40px;
-
-}
-
-.col_1, .col_2, .col_3 {
-
-    width: 30%;
 
 }

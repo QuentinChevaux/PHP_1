@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="./index.css">
 
-    <title>Document</title>
+    <title>Page Boucle</title>
 
 </head>
 
@@ -38,8 +38,6 @@
 
     <br />
 
-
-
         <?php
 
         echo "<div class = 'flex'>";
@@ -48,7 +46,7 @@
 
             $j = $_POST["number"] + 1;
 
-            $resultat_table = "";
+            $resultat_table = 0;
 
             $res_iteration = 1;
 
@@ -96,9 +94,44 @@
 
             echo "</div>";
 
-        }
+            echo "</div>";
 
-        echo "</div>";
+            echo "<h2>Calcul somme Entier jusque nombre entré : </h2><br />";
+
+            if ( !empty($_POST["number"])) {
+
+                $resultat_table = 0;
+
+                for ( $res_iteration = 1 ; $res_iteration <= $_POST["number"]; $res_iteration++) {
+    
+                    $resultat_table = $resultat_table + $res_iteration ;
+    
+                }
+
+                echo "<h2> $resultat_table </h2><br />";
+
+            }
+
+            echo "<h2>Calcul Factoriel : </h2><br />";
+
+            if ( !empty($_POST["number"])) {
+
+                $resultat_table = 1;
+
+                for ( $res_iteration = 1 ; $res_iteration <= $_POST["number"]; $res_iteration++) {
+    
+                    $resultat_table = $resultat_table * $res_iteration ;
+    
+                }
+
+                echo "<h2> $resultat_table </h2><br />";
+
+            }
+
+
+
+
+        }
 
         ?>
     

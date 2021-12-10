@@ -83,7 +83,90 @@
         }
 
     ?>
+
     
+        <br />
+        <br />
+
+    <form action="" method="POST">
+
+        <label for="chaine_depart">Entrez une phrase</label>
+        <input type="text" name="chaine_depart" />
+
+        <label for="letter_to_count">Saisir une Lettre à compter</label>
+        <input type="text" name="letter_to_count" />
+
+            <br />
+            <br />
+
+        <input type="submit" value="Changer le texte" />
+
+    </form>
+
+    <?php
+
+        if (isset($_POST["chaine_depart"]) && isset($_POST["letter_to_count"])) {
+
+            $chaine_depart = $_POST["chaine_depart"];
+
+            $letter_to_count = $_POST["letter_to_count"];
+
+            $position = strpos($chaine_depart, $letter_to_count);
+
+            $nombre_de_fois_vu = 0;
+    
+                while ( $position != 0 || substr($chaine_depart, 0, 1) == $letter_to_count) {
+
+                    $chaine_depart = substr($chaine_depart, $position + 1 );
+
+                    $position = strpos($chaine_depart, $letter_to_count);
+
+                    $nombre_de_fois_vu++;
+                    
+                }
+
+            echo "<h2>$nombre_de_fois_vu</h2>";
+
+        }
+
+    ?>
+    
+    <br />
+        <br />
+
+    <form action="" method="POST">
+
+        <label for="texte">Entrez une phrase</label>
+        <input type="text" name="texte" />
+
+        <label for="mettre_en_majuscule">Saisir une Lettre à mettre en Majuscule</label>
+        <input type="text" name="mettre_en_majuscule" />
+
+            <br />
+            <br />
+
+        <input type="submit" value="Changer le texte" />
+
+    </form>
+
+    <?php
+
+        if (isset($_POST["texte"]) && isset($_POST["mettre_en_majuscule"])) {
+
+            $chaine_depart = $_POST["texte"];
+
+            $mettre_en_majuscule = $_POST["mettre_en_majuscule"];
+
+            $majuscule = strtoupper($mettre_en_majuscule);
+
+            $chaine_change = str_replace($mettre_en_majuscule, $majuscule, $chaine_depart);
+
+            echo "<h2>La chaine : " . " '" . $chaine_depart . "' " . " à été changée en : " . $chaine_change . "</h2>";           
+
+        }
+
+    ?>
+
 
 </body>
 </html>

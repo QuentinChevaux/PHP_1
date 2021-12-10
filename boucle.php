@@ -272,7 +272,7 @@
 
         else {
 
-            echo "Saisissez les Valeurs dans les Inputs";
+            echo "<h2>Saisissez les Valeurs dans les Inputs</h2>";
 
         }
         
@@ -289,42 +289,42 @@
 
                 <div>
                     
-                    <p>Prénom</p>
+                    <label for="prenom">Prénom</label>
                     <input type="text" name="prenom" />
     
                 </div>
     
                 <div>
                     
-                    <p>Français</p>
+                    <label for="francais" name="francais_label">Français</label>
                     <input type="number" name="francais" id="francais"/>
     
                 </div>
     
                 <div>
     
-                    <p>Math</p>
+                    <label for="math" name="math_label">Math</label>
                     <input type="number" name="math" />
     
                 </div>
     
                 <div>
                     
-                    <p>Anglais</p>
+                    <label for="anglais" name="anglais_label">Anglais</label>
                     <input type="number" name="anglais" />
     
                 </div>
     
                 <div>
     
-                    <p>Histoire-Géographie</p>
+                    <label for="histoire-geographie" name="histoire-geographie_label">Histoire Geographie</label>
                     <input type="number" name="histoire-geographie" />
     
                 </div>
     
                 <div>
     
-                    <p>Sciences</p>
+                    <label for="sciences" name="sciences_label">Sciences</label>
                     <input type="number" name="sciences" />
     
                 </div>
@@ -364,6 +364,12 @@
                             $check_max = max( array($_POST["francais"], $_POST["math"], $_POST["anglais"], $_POST["histoire-geographie"], $_POST["sciences"]));
 
                             $check_min = min( array($_POST["francais"], $_POST["math"], $_POST["anglais"], $_POST["histoire-geographie"], $_POST["sciences"]));
+
+                            $matiere = array( $_POST["francais_label"], $_POST["math_label"], $_POST["anglais_label"], $_POST["histoire-geographie_label"], $_POST["sciences_label"]);
+
+                            $mat = $matiere[$key];
+
+                            echo $mat;
 
                             echo "<h2>La note la plus haute est : " . $check_max . " , la note la plus basse est : " . $check_min;
 

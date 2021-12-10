@@ -278,5 +278,122 @@
         
         ?>
 
+        <br />
+        <br />
+
+        <h2>A L'école</h2>
+
+            <form action="" method="POST">
+
+            <div class="flex_center form_ecole">
+
+                <div>
+                    
+                    <p>Prénom</p>
+                    <input type="text" name="prenom" />
+    
+                </div>
+    
+                <div>
+                    
+                    <p>Français</p>
+                    <input type="number" name="francais" />
+    
+                </div>
+    
+                <div>
+    
+                    <p>Math</p>
+                    <input type="number" name="math" />
+    
+                </div>
+    
+                <div>
+                    
+                    <p>Anglais</p>
+                    <input type="number" name="anglais" />
+    
+                </div>
+    
+                <div>
+    
+                    <p>Histoire-Géographie</p>
+                    <input type="number" name="histoire-geographie" />
+    
+                </div>
+    
+                <div>
+    
+                    <p>Sciences</p>
+                    <input type="number" name="sciences" />
+    
+                </div>
+
+            </div>
+
+                <br />
+
+                <input type="submit" value="Calculer Moyenne">
+
+            </form>
+
+        <?php
+
+            if (isset($_POST["prenom"]) && isset($_POST["francais"]) && isset($_POST["math"])
+            && isset($_POST["anglais"]) && isset($_POST["histoire-geographie"]) && isset($_POST["sciences"])) {
+
+                if (!empty($_POST["prenom"]) && !empty($_POST["francais"]) && !empty($_POST["math"])
+                && !empty($_POST["anglais"]) && !empty($_POST["histoire-geographie"]) && !empty($_POST["sciences"])) {
+
+                    if ( $_POST["francais"] >= 0 && $_POST["math"] >= 0 && $_POST["anglais"] >= 0 && $_POST["histoire-geographie"] >= 0 && $_POST["sciences"] >= 0) {
+
+                        if ( $_POST["francais"] <= 20 && $_POST["math"] <= 20 && $_POST["anglais"] <= 20 && $_POST["histoire-geographie"] <= 20 && $_POST["sciences"] <= 20) {
+
+                            $moyenne = ( $_POST["francais"] + $_POST["math"] + $_POST["anglais"] + $_POST["histoire-geographie"] + $_POST["sciences"] ) / 5;
+                        
+                            echo "<h2>La moyenne de L'élève " . $_POST["prenom"] . " est : " . $moyenne . "</h2>";
+
+                            if ( $moyenne < 10 ) {
+
+                                $point_manquant = 10 - $moyenne;
+
+                                echo "<h2>Il manque " . $point_manquant . " points pour atteindre la moyenne</h2>";
+
+                            }
+
+                            $check_max = max( array($_POST["francais"], $_POST["math"], $_POST["anglais"], $_POST["histoire-geographie"], $_POST["sciences"]));
+
+                            $check_min = min( array($_POST["francais"], $_POST["math"], $_POST["anglais"], $_POST["histoire-geographie"], $_POST["sciences"]));
+
+                            echo "<h2>La note la plus haute est : " . $check_max . " en " . "" . " , la note la plus basse est : " . $check_min;
+
+                        }
+
+                        else {
+
+                            echo "<h2>Une note ne peux pas être Supérieure à 20 &#128528;";
+
+                        }
+
+                    }
+
+                    else {
+
+                        echo "<h2>Une note ne peux pas être Négative &#128528;";
+
+                    }
+
+                }
+
+                else {
+
+                    echo "<h2>Veuillez saisir toutes les Valeurs</h2>";
+
+                }
+
+            }
+
+        ?>
+
 </body>
 </html>

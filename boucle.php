@@ -297,7 +297,7 @@
                 <div>
                     
                     <p>Français</p>
-                    <input type="number" name="francais" />
+                    <input type="number" name="francais" id="francais"/>
     
                 </div>
     
@@ -365,7 +365,7 @@
 
                             $check_min = min( array($_POST["francais"], $_POST["math"], $_POST["anglais"], $_POST["histoire-geographie"], $_POST["sciences"]));
 
-                            echo "<h2>La note la plus haute est : " . $check_max . " en " . "" . " , la note la plus basse est : " . $check_min;
+                            echo "<h2>La note la plus haute est : " . $check_max . " , la note la plus basse est : " . $check_min;
 
                         }
 

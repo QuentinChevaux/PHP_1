@@ -296,35 +296,40 @@
     
                 <div>
                     
-                    <label for="francais" name="francais_label">Français</label>
+                    <label for="francais">Français</label>
+                    <input type="hidden" name="francais_label" value="francais">
                     <input type="number" name="francais" id="francais"/>
     
                 </div>
     
                 <div>
     
-                    <label for="math" name="math_label">Math</label>
+                    <label for="math">Math</label>
+                    <input type="hidden" name="math_label" value="math">
                     <input type="number" name="math" />
     
                 </div>
     
                 <div>
                     
-                    <label for="anglais" name="anglais_label">Anglais</label>
+                    <label for="anglais">Anglais</label>
+                    <input type="hidden" name="anglais_label" value="anglais">
                     <input type="number" name="anglais" />
     
                 </div>
     
                 <div>
     
-                    <label for="histoire-geographie" name="histoire-geographie_label">Histoire Geographie</label>
+                    <label for="histoire-geographie">Histoire Geographie</label>
+                    <input type="hidden" name="histoire-geographie_label" value="histoire geographie">
                     <input type="number" name="histoire-geographie" />
     
                 </div>
     
                 <div>
     
-                    <label for="sciences" name="sciences_label">Sciences</label>
+                    <label for="sciences">Sciences</label>
+                    <input type="hidden" name="sciences_label" value="sciences">
                     <input type="number" name="sciences" />
     
                 </div>
@@ -361,17 +366,23 @@
 
                             }
 
-                            $check_max = max( array($_POST["francais"], $_POST["math"], $_POST["anglais"], $_POST["histoire-geographie"], $_POST["sciences"]));
+                            $tableau = array($_POST["francais"], $_POST["math"], $_POST["anglais"], $_POST["histoire-geographie"], $_POST["sciences"]);
 
-                            $check_min = min( array($_POST["francais"], $_POST["math"], $_POST["anglais"], $_POST["histoire-geographie"], $_POST["sciences"]));
+                            $check_max = max( $tableau );
+
+                            $check_min = min( $tableau );
 
                             $matiere = array( $_POST["francais_label"], $_POST["math_label"], $_POST["anglais_label"], $_POST["histoire-geographie_label"], $_POST["sciences_label"]);
 
-                            $mat = $matiere[$key];
+                            $key_max = array_search($check_max, $tableau);
 
-                            echo $mat;
+                            $key_min = array_search($check_min, $tableau);
 
-                            echo "<h2>La note la plus haute est : " . $check_max . " , la note la plus basse est : " . $check_min;
+                            $matiere_max = $matiere[$key_max];
+
+                            $matiere_min = $matiere[$key_min];
+
+                            echo "<h2>La note la plus haute est : " . $check_max  . " en " . $matiere_max . ", la note la plus basse est : " . $check_min . " en " . $matiere_min . "</h2>";
 
                         }
 

@@ -297,7 +297,7 @@
                 <div>
                     
                     <label for="francais">Français</label>
-                    <input type="hidden" name="francais_label" value="francais">
+                    <input type="hidden" name="francais_label" value="Français">
                     <input type="number" name="francais" id="francais"/>
     
                 </div>
@@ -305,7 +305,7 @@
                 <div>
     
                     <label for="math">Math</label>
-                    <input type="hidden" name="math_label" value="math">
+                    <input type="hidden" name="math_label" value="Math">
                     <input type="number" name="math" />
     
                 </div>
@@ -313,7 +313,7 @@
                 <div>
                     
                     <label for="anglais">Anglais</label>
-                    <input type="hidden" name="anglais_label" value="anglais">
+                    <input type="hidden" name="anglais_label" value="Anglais">
                     <input type="number" name="anglais" />
     
                 </div>
@@ -321,7 +321,7 @@
                 <div>
     
                     <label for="histoire-geographie">Histoire Geographie</label>
-                    <input type="hidden" name="histoire-geographie_label" value="histoire geographie">
+                    <input type="hidden" name="histoire-geographie_label" value="Histoire Geographie">
                     <input type="number" name="histoire-geographie" />
     
                 </div>
@@ -329,7 +329,7 @@
                 <div>
     
                     <label for="sciences">Sciences</label>
-                    <input type="hidden" name="sciences_label" value="sciences">
+                    <input type="hidden" name="sciences_label" value="Sciences">
                     <input type="number" name="sciences" />
     
                 </div>

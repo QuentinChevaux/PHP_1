@@ -347,14 +347,14 @@
             if (isset($_POST["prenom"]) && isset($_POST["francais"]) && isset($_POST["math"])
             && isset($_POST["anglais"]) && isset($_POST["histoire-geographie"]) && isset($_POST["sciences"])) {
 
-                if (!empty($_POST["prenom"]) && !empty($_POST["francais"]) && !empty($_POST["math"])
-                && !empty($_POST["anglais"]) && !empty($_POST["histoire-geographie"]) && !empty($_POST["sciences"])) {
+                if (($_POST["prenom"]) != '' && ($_POST["francais"]) != '' && ($_POST["math"]) != ''
+                && ($_POST["anglais"]) != '' && ($_POST["histoire-geographie"]) != '' && ($_POST["sciences"]) != '') {
 
                     if ( $_POST["francais"] >= 0 && $_POST["math"] >= 0 && $_POST["anglais"] >= 0 && $_POST["histoire-geographie"] >= 0 && $_POST["sciences"] >= 0) {
 
                         if ( $_POST["francais"] <= 20 && $_POST["math"] <= 20 && $_POST["anglais"] <= 20 && $_POST["histoire-geographie"] <= 20 && $_POST["sciences"] <= 20) {
 
-                            $moyenne = ( $_POST["francais"] + $_POST["math"] + $_POST["anglais"] + $_POST["histoire-geographie"] + $_POST["sciences"] ) / 5;
+                            $moyenne = ( $_POST["francais"] + $_POST["math"] + $_POST["anglais"] + $_POST["histoire-geographie"] + $_POST["sciences"] ) / 5 ;
                         
                             echo "<h2>La moyenne de L'élève " . $_POST["prenom"] . " est : " . $moyenne . "</h2>";
 
